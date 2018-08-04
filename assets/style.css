@@ -1,3 +1,4 @@
+
 body{
     background: #000000f0;
 }
@@ -5,34 +6,43 @@ header h3{
     font-family: 'Kaushan Script', cursive;
     font-size: 2.5em;
 }
+.itemLabel{
+    cursor: pointer;
+}
 .itemIcon{
     padding: 15px;
     margin: 25px 30px 0px 30px;
     cursor:pointer;
 }
 .f1{
-    border-top: 3px solid red;
-    border-bottom: 3px solid orange;
+    height: 200px;
+    border: 3px solid #ffdfb6;
+    background: rgba(252, 151, 19, 0.925)
 }
 .itemFrame{
-    margin-right: 50px;
+    z-index: 12;
+    margin: 25px;
 }
-.heartbeat:hover *{
+.highLighted{
+    color: #fff;
+}
+/* .heartbeat:hover *{
     color: #e86d6dc7 !important; 
+    color: #010f17e6 !important;
+    color: #ffffff !important;
 }
 .shield:hover *{
     color: #62c5ffc9 !important;
+    color: #010f17e6 !important;
+
 }
 .lightbulb:hover * {
     color: #ebc5ffc9 !important;
+    color: #010f17e6 !important;
+
 }
 .bolt:hover *{
    color: #ffc107bd !important;
-}
-#main-content{
-    height: 400px;
-}
-.row{
-   
-    height: 100%;
-}
+   color: #010f17e6 !important;
+
+} */
