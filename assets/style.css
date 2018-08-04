@@ -19,30 +19,30 @@ header h3{
     border: 3px solid #ffdfb6;
     background: rgba(252, 151, 19, 0.925)
 }
+a{
+    color: initial;
+}
 .itemFrame{
     z-index: 12;
     margin: 25px;
 }
-.highLighted{
-    color: #fff;
+.itemFrame:hover span, .itemFrame:hover i{
+    color:#fff 
 }
-/* .heartbeat:hover *{
-    color: #e86d6dc7 !important; 
-    color: #010f17e6 !important;
-    color: #ffffff !important;
+.itemLabel.active{
+    font-weight:bold;
+    color:#fff;
 }
-.shield:hover *{
-    color: #62c5ffc9 !important;
-    color: #010f17e6 !important;
+.fa-heartbeat.activate{
+    color:#F44336 !important;
+}
+.fa-shield.activate{
+    color:#0008ffcf !important;
+}
+.fa-bolt.activate{
+    color:#ffed52 !important;
+}
+.fa-lightbulb-o.activate{
+    color:#006947 !important;
+}
 
-}
-.lightbulb:hover * {
-    color: #ebc5ffc9 !important;
-    color: #010f17e6 !important;
-
-}
-.bolt:hover *{
-   color: #ffc107bd !important;
-   color: #010f17e6 !important;
-
-} */

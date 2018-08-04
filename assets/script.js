@@ -1,9 +1,13 @@
 
-
-    $(".itemFrame").on("click",function(event){
-
-        $(this).css("color", "#fff");
-        console.log($(this).css("color"))
-    });
-    
-
+$(".itemFrame").on("click","i",function(){
+    console.log($(this)["0"])
+    if($(this).hasClass("activate")){
+        $(this).removeClass("activate");
+    }
+    else{
+        
+        $(this).addClass("activate");
+    }
+});
+     
+          
