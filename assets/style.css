@@ -1,6 +1,15 @@
+body,html{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+a,a:hover,a:focus,a:visited{
+    color: initial;
+}
+a{text-decoration: none;}
 
 body{
-    background: #000000f0;
+    background: #000000bb;
     color: none;
 }
 header h3{
@@ -9,6 +18,7 @@ header h3{
 }
 .itemVal{
     font-size: 1.5em;
+    display:inline-flex;
     padding: 5px;
     border-bottom: 1px solid #fff;
 
@@ -19,16 +29,17 @@ header h3{
 }
 
 .f1{
-    height: auto;
+    min-height: 195px;
+    margin: auto;
     border: 3px solid #ffdfb6;
     background: rgba(252, 151, 19, 0.825)
 }
 .itemFrame{
-    margin: 25px;
+    margin: 10px 35px 40px 35px;
     cursor:pointer;
 }
 .itemFrame:hover .itemLabel,
-.itemFrame:hover i{
+.itemFrame:hover .itemIcon{
     color:#fff 
 }
 .fa-heartbeat.activate{

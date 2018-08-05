@@ -13,31 +13,38 @@
   <header>
   <div class="container-fluid d-flex justify-content-between bg-dark border-bottom border-white">
     <h3 class="text-light mr-auto p-3">RPG Game</h3>
-    <button type="button" class="btn btn-info btn-md align-self-center" data-toggle="modal" data-target="#insModal">Instructions</button>
+    <button id="showSkills" type="button" class="btn btn-warning btn-md align-self-center mx-4 invisible" data-toggle="modal" data-target="#skillLevels">Skill Progress</button>
+
+    <button type="button" class="btn btn-info btn-md align-self-center ml-4" data-toggle="modal" data-target="#insModal">Instructions</button>
   </div>
   </header>
 
   <div class="row">
-      <div class="f1 col-md-0 mx-auto d-flex flex-wrap justify-content-around">
-          <div class="itemFrame heartbeat text-center align-self-end" data-type="health">
+  
+      <div id="skillChart" class="f1 col-md-0 mx-auto mt-5 d-flex position-relative flex-wrap justify-content-around">
+          <div class="itemFrame heartbeat text-center " data-type="health">
                 <h2 class="itemIcon"><i class="fa fa-heartbeat activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel">HEALTH</span>
           </div>
 
-          <div class="itemFrame shield text-center align-self-end" data-type="strength">
+          <div class="itemFrame shield text-center " data-type="strength">
                 <h2 class="itemIcon"><i class="fa fa-shield activate"  aria-hidden="true"></i></h2>
                 <span class="itemLabel ">STRENGTH</span>
           </div>
 
-          <div class="itemFrame lightbulb text-center align-self-end" data-type="logic">
+          <div class="itemFrame lightbulb text-center" data-type="logic">
                 <h2 class="itemIcon"><i class="fa fa-lightbulb-o activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel ">LOGIC</span>
           </div>  
 
-          <div class="itemFrame bolt text-center align-self-end" data-type="agility">
+          <div class="itemFrame bolt text-center" data-type="agility">
                 <h2 class="itemIcon"><i class="fa fa-bolt activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel ">AGILITY</span>
           </div>
+          <div class="container d-flex justify-content-center">
+              <h5 class="position-absolute h5" id="skillInstruct" style="bottom:25px">Select a skill <strong>above</strong> to see it's current level</h5>
+              <a href="#" id="hideme" class="d-flex align-items-md-baseline mr-auto mb-2"><span style="font-size:0.8em;color:#333">Hide</span></a>
+           </div>
       </div>
     </div>
   </div>
