@@ -1,48 +1,51 @@
 
 body{
     background: #000000f0;
+    color: none;
 }
 header h3{
     font-family: 'Kaushan Script', cursive;
     font-size: 2.5em;
 }
-.itemLabel{
-    cursor: pointer;
+.itemVal{
+    font-size: 1.5em;
+    padding: 5px;
+    border-bottom: 1px solid #fff;
+
 }
 .itemIcon{
     padding: 15px;
-    margin: 25px 30px 0px 30px;
-    cursor:pointer;
+    margin: 5px 30px 0px 30px;
 }
+
 .f1{
-    height: 200px;
+    height: auto;
     border: 3px solid #ffdfb6;
-    background: rgba(252, 151, 19, 0.925)
-}
-a{
-    color: initial;
+    background: rgba(252, 151, 19, 0.825)
 }
 .itemFrame{
-    z-index: 12;
     margin: 25px;
+    cursor:pointer;
 }
-.itemFrame:hover span, .itemFrame:hover i{
+.itemFrame:hover .itemLabel,
+.itemFrame:hover i{
     color:#fff 
-}
-.itemLabel.active{
-    font-weight:bold;
-    color:#fff;
 }
 .fa-heartbeat.activate{
     color:#F44336 !important;
 }
+
 .fa-shield.activate{
     color:#0008ffcf !important;
+
 }
 .fa-bolt.activate{
     color:#ffed52 !important;
 }
 .fa-lightbulb-o.activate{
     color:#006947 !important;
+}
+.activate{
+    border:none
 }
 

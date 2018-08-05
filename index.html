@@ -11,31 +11,33 @@
 </head>
 <body>
   <header>
-  <div class="container-fluid bg-dark border-bottom border-white">
-    <h3 class="text-light p-3">RPG Game</h3>
+  <div class="container-fluid d-flex justify-content-between bg-dark border-bottom border-white">
+    <h3 class="text-light mr-auto p-3">RPG Game</h3>
+    <button type="button" class="btn btn-info btn-md align-self-center" data-toggle="modal" data-target="#insModal">Instructions</button>
   </div>
   </header>
 
-  <div class="container">
-      <div class="f1 col-md-8 mx-auto">
-          <div class="container text-center">
-              <div class="d-inline-block itemFrame heartbeat">
-                <h2 class="itemIcon"><i class="fa fa-heartbeat" aria-hidden="true"></i></h2>
+  <div class="row">
+      <div class="f1 col-md-0 mx-auto d-flex flex-wrap justify-content-around">
+          <div class="itemFrame heartbeat text-center align-self-end" data-type="health">
+                <h2 class="itemIcon"><i class="fa fa-heartbeat activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel">HEALTH</span>
-              </div>
-              <div class="d-inline-block itemFrame shield">
-                <h2 class="itemIcon"><i class="fa fa-shield"  aria-hidden="true"></i></h2>
-                <span class="itemLabel">STRENGTH</span>
-              </div>
-              <div class="d-inline-block itemFrame lightbulb">
-                <h2 class="itemIcon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></h2>
+          </div>
+
+          <div class="itemFrame shield text-center align-self-end" data-type="strength">
+                <h2 class="itemIcon"><i class="fa fa-shield activate"  aria-hidden="true"></i></h2>
+                <span class="itemLabel ">STRENGTH</span>
+          </div>
+
+          <div class="itemFrame lightbulb text-center align-self-end" data-type="logic">
+                <h2 class="itemIcon"><i class="fa fa-lightbulb-o activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel ">LOGIC</span>
-              </div>  
-              <div class="d-inline-block itemFrame bolt">
-                <h2 class="itemIcon"><i class="fa fa-bolt" aria-hidden="true"></i></h2>
-                <span class="itemLabel">AGILITY</span>
-              </div>
-            </div>
+          </div>  
+
+          <div class="itemFrame bolt text-center align-self-end" data-type="agility">
+                <h2 class="itemIcon"><i class="fa fa-bolt activate" aria-hidden="true"></i></h2>
+                <span class="itemLabel ">AGILITY</span>
+          </div>
       </div>
     </div>
   </div>
