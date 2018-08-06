@@ -3,25 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>RPG</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 </head>
 <body>
   <header>
   <div class="container-fluid d-flex justify-content-between bg-dark border-bottom border-white">
     <h3 class="text-light mr-auto p-3">RPG Game</h3>
-    <button id="showSkills" type="button" class="btn btn-warning btn-md align-self-center mx-4 invisible" data-toggle="modal" data-target="#skillLevels">Skill Progress</button>
+    <button id="showSkills" type="button" class="btn btn-warning btn-md align-self-center mx-4 invisible" data-target="#skillLevels">Skill Progress</button>
 
-    <button type="button" class="btn btn-info btn-md align-self-center ml-4" data-toggle="modal" data-target="#insModal">Instructions</button>
-  </div>
+    <button type="button" class="btn btn-info btn-md align-self-center ml-4" data-toggle="modal" data-target="#myModal">Instructions</button>
+    
   </header>
 
+  <div class="container main-content">
+    <div class="row">
+      <!-- instructions -->
+      <div id="instructions" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Chapter 1</h4>
+              </div>
+              <div class="modal-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend facilisis pulvinar. Nulla mattis sapien sit amet nibh scelerisque, sit amet posuere nisl laoreet. 
+                </p>
+                <p>Donec elementum sapien diam, nec feugiat mi fermentum eu. Nam pellentesque, justo nec ultrices laoreet, est dui ullamcorper dui, sed sodales nibh lectus nec massa. Nullam non sollicitudin nulla. Curabitur molestie tempor aliquet. Duis sapien libero, rhoncus vel euismod eu, vehicula at sapien. In tortor justo, consequat eu dolor a, blandit convallis nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Sed dictum ligula sed urna sodales, eget scelerisque felis gravida. Nam sed sem quis dolor fermentum iaculis. Maecenas id diam ex. Fusce placerat quam vel ligula posuere, vitae porta ipsum placerat. Etiam quis consequat ligula.</p>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
   <div class="row">
   
-      <div id="skillChart" class="f1 col-md-0 mx-auto mt-5 d-flex position-relative flex-wrap justify-content-around">
+      <div id="skillChart" class="f1 col-md-0 mx-auto mt-5 d-flex position-relative flex-wrap justify-content-center">
           <div class="itemFrame heartbeat text-center " data-type="health">
                 <h2 class="itemIcon"><i class="fa fa-heartbeat activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel">HEALTH</span>
@@ -41,13 +64,15 @@
                 <h2 class="itemIcon"><i class="fa fa-bolt activate" aria-hidden="true"></i></h2>
                 <span class="itemLabel ">AGILITY</span>
           </div>
-          <div class="container d-flex justify-content-center">
-              <h5 class="position-absolute h5" id="skillInstruct" style="bottom:25px">Select a skill <strong>above</strong> to see it's current level</h5>
-              <a href="#" id="hideme" class="d-flex align-items-md-baseline mr-auto mb-2"><span style="font-size:0.8em;color:#333">Hide</span></a>
+          <div class="row container-fluid d-flex justify-content-center">
+              <h5 class="position-absolute h5" id="skillInstruct" style="bottom:10px; color: #090a0a;">Select a skill <strong>above</strong> to see it's current level</h5>
+              <a href="#" id="hideme" data-dissmiss="modal" class="d-flex align-items-md-baseline close"><span class="position-absolute" style="font-size:0.5em;top:10px; left: 10px;">Hide</span></a>
            </div>
       </div>
+    
     </div>
   </div>
+</div>
   
 
 

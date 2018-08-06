@@ -2,9 +2,15 @@ body,html{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow-x:hidden;
 }
-a,a:hover,a:focus,a:visited{
+a:focus,a:visited{
     color: initial;
+    text-decoration:none;
+}
+a:hover,#hideme span:hover{
+    text-decoration:underline;
+    text-decoration-color: #333;
 }
 a{text-decoration: none;}
 
@@ -35,7 +41,7 @@ header h3{
     background: rgba(252, 151, 19, 0.825)
 }
 .itemFrame{
-    margin: 10px 35px 40px 35px;
+    margin: 20px 35px 20px 35px;
     cursor:pointer;
 }
 .itemFrame:hover .itemLabel,
