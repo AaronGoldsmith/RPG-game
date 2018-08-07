@@ -90,9 +90,11 @@ $(document).ready(function(){
         // {
         //     $(".card-body").append("<br><button>ATTACK</button><br><button>RUN</button>");
         // }
-        $("#comedianTxt").remove();
+        $("#comedianTxt").remove()
+
         $(".card-text").toggle();
         $("#enemySelect").removeClass("invisible")
+        // $("#enemyselection").remove();
         skillLabel.removeClass("invisible");
 
     });
