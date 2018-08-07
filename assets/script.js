@@ -1,7 +1,13 @@
-let weaponList = [{"sword":4},{"axe":3},{"pistol":8},{"magic": 7}];
+let weaponList = [
+    {"sword":4,"lifespan":100},
+    {"axe":3,"lifespan":200},
+    {"pistol":8,"lifespan":10},
+    {"magic": 7,"lifespan":20}];
 var skillLabel =  $("#showSkills")
 var skills = $("#skillChart")
-var insBtn = $("instructions")
+var insBtn = $("#instructional");
+
+var GAMESTARTED = false;
 let playerObj = {
     stats: {
           health: 0,
@@ -9,27 +15,15 @@ let playerObj = {
           logic: 0,
           agility: 0,
         },
-    items: [],
-    attack(opponent){
-
-    }
+    items: []
+    
 };
+function random(arr){
+    var len = arr.length;
+    var rindex = Math.floor(Math.random()*len);
+    return arr[rindex];
+}
 function badGuy(named, level){
-    // var enemy1 = {
-    //     name: named,
-    //     stats:{
-    //         health: 0,
-    //         strength: 0,
-    //         money: 0
-    //     },
-    //     difficulty: level,
-    //     weapons: [weaponList[0]],
-        
-    //     takeDamage(damage){
-    //         health -= damage;
-    //         strength -= 1;
-    //     }
-    // };
     this.name = named;
     this.strength = Math.pow(level,2); 
     this.warcry = function(){
@@ -38,9 +32,9 @@ function badGuy(named, level){
 
 }
 
-let level1 = [new badGuy("Maglah",1),new badGuy("Taglah",1),new badGuy("Raglah",1),new badGuy("Naglah",1),new badGuy("Waglah",1)]
-let level2 = [new badGuy("Koba",2),new badGuy("Roba",2),new badGuy("Doba",2),new badGuy("Koba",2),new badGuy("Loba",2),]
-
+var level1 = [new badGuy("Maglah",1),new badGuy("Taglah",1),new badGuy("Raglah",1),new badGuy("Naglah",1),new badGuy("Waglah",1)]
+var level2 = [new badGuy("Poba",2),new badGuy("Roba",2),new badGuy("Doba",2),new badGuy("Koba",2),new badGuy("Loba",2),]
+var level3 = [new badGuy("Mr. Meeseeks",3),new badGuy("Squanchy",3)]
 // update stats on scren
 function updateDisplayedStats(){
     $("#health").text(playerObj.stats.health)
@@ -53,16 +47,25 @@ $(document).ready(function(){
     updateDisplayedStats()
     skillLabel.on("click",function(){
         updateDisplayedStats()
-        skills.fadeIn("fast",function(){
-            skills.css("visibility","visible")
+            skills.fadeIn("fast",function(){
+            skills.removeClass("invisible");
             skillLabel.addClass("invisible")
         });
     })
     $("#hideme").on("click",function(){
         skills.fadeOut("fast",function(){
-              skills.css("visibility","hidden");
               skillLabel.removeClass("invisible");
+              skills.addClass("invisible")
         });
+    });
+    $("#start").on("click",function(){
+        // start game
+        if($)
+        $(this).toggle();
+    });
+    insBtn.on("click",function(){
+        console.log("here")
+        $(this).toggle();
     });
     // clicking on a skill
     $(".itemFrame").on("click",function(event){
@@ -76,12 +79,11 @@ $(document).ready(function(){
         $(this).prepend("<span class='itemVal rounded-bottom' id="+idName+"></span>");
     
         if(icon.hasClass("activate")){
-            $(this).addClass("align-self-end");
-            // updateDisplayedStats()
-    
+            $(this).addClass("align-self-end");    
             textName.removeClass("text-white")
             icon.removeClass("activate");
-            $("#skillInstruct").attr("class","d-none")
+            $("#skillInstruct").addClass("invisible")
+
     
         }
         else{
@@ -91,6 +93,12 @@ $(document).ready(function(){
             icon.addClass("activate");
         }
         updateDisplayedStats()
+    });
+
+    $("#start").on("click",function(){
+        $(this).toggle
+        GAMESTARTED = true;
+        skillLabel.removeClass("invisible");
     });
 
 });
