@@ -73,7 +73,6 @@ function updateDisplayedStats(){
 $(document).ready(function(){
     updateDisplayedStats()
     $("#namer").focus()
-
     skillLabel.on("click",function(){
         updateDisplayedStats()
             skills.fadeIn("fast",function(){
@@ -86,9 +85,12 @@ $(document).ready(function(){
         $(".card-img-top").parent().addClass("invisible");
         $(this).parent().removeClass("invisible");
         $(this).removeClass("activate")
-        // $(".layer-2").remove()
-    //     $(".gameContent").remove();
-    //     $(".card-body").remove();
+        $("#comedianTxt").remove();
+        $(".card-text").toggle();
+        $(".card-body").append("<button>ATTACK</button><br><button>RUN</button>");
+
+        skillLabel.removeClass("invisible");
+
     });
 
     $("#hideme").on("click",function(){
@@ -107,10 +109,9 @@ $(document).ready(function(){
     $("#start").on("click",function(event){
         // start game if they have something in the input
             GAMESTARTED = true;
-        
-            $(this).toggle();
             $(".layer-1").remove();
             $(".layer-2").removeClass("invisible");
+            $(this).remove();
 
             skillLabel.removeClass("invisible");
     });

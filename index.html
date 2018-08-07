@@ -14,7 +14,7 @@
   <header>
     <div class="container-fluid d-flex justify-content-between bg-dark border-bottom border-white">
       <h3 class="text-light mr-auto col-6 p-3">RPG Game</h3>
-      <button id="showSkills" type="button" class="btn btn-warning btn-md align-self-center ml-auto invisible" data-toggle="collapse" data-target="#skillLevels"><i class="fa fa-line-chart pr-2"></i> Progress</button>
+      <button id="showSkills" type="button" class="btn layer-2 btn-warning btn-md align-self-center ml-auto invisible" data-toggle="collapse" data-target="#skillLevels"><i class="fa fa-line-chart pr-2"></i> Progress</button>
       <button type="button" class="btn btn-info btn-md align-self-center mx-4" data-toggle="modal" data-target="#instructional">Instructions</button>
     </div>
   </header>
@@ -25,32 +25,32 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><strong>Enter your name</strong></span>
               </div>
-              <input id="namerInput"class="form-control p-5 text-left" placeholder="Joe schmo" aria-label="Name character" />
+              <input id="inputNamer"class="form-control p-5 text-left" placeholder="Joe schmo" aria-label="Name character" />
           </div>
           <div id="start" class="display-3 text-center my-5">Start the Game</div>
           <br><br>
     </div>
     <div class="row">
-      <h3 class="gameContent layer-2 invisible text-white py-2 my-2">Select your <em>comedian</em> warrior</h3>
+      <h3 id="comedianTxt" class=" layer-2 invisible text-white py-2 my-2">Select your <em>comedian</em> warrior</h3>
     </div>
     <div id="playerSelect" class="row w-100 layer-2 invisible">
 
-        <div class="card-deck">
-            <div class="card" activate>
+        <div class="card-deck mt-3 ">
+            <div class="card card-inverse danger mt-3" activate>
               <img class="card-img-top" value="oliver" src="https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_80/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1522648269/170417-stern-john-oliver-tease_t7nghh_1_gktefh" alt="john oliver">
               <div class="card-body">
-                <h5 class="card-title">John Oliver</h5>
-                <p class="card-text">His jokes are to <em>die</em> for</p>
+                <h5 class="card-title">John Oliver </h5>
+                <p ie='jokes' class="card-text">His jokes are to <em>die</em> for</p>
               </div>
             </div>
-            <div class="card" activate>
+            <div class="card mt-3" activate>
               <img class="card-img-top" value="colbert" src="https://media.gettyimages.com/photos/stephen-colbert-arrives-for-the-showtime-golden-globe-nominees-at-picture-id902064126?k=6&m=902064126&s=612x612&w=0&h=c1fs6YEIuf9g-Owb8_CqXx8M2x0GitWSVtfEKeYLeEA=" alt="colbert">
               <div class="card-body">
                 <h5 class="card-title">Steven Colbert</h5>
                 <p class="card-text">His jokes will make you laugh and cry, mostly because you will be reminded of how ludicrous of a president we have</p>
               </div>
             </div>
-            <div class="card" activate>
+            <div class="card mt-3" activate>
               <img class="card-img-top" value="noah" src="https://www.gannett-cdn.com/-mm-/0a0b61664e95c9a8c9adb0be0df0237d5e404f38/c=0-107-2997-1800/local/-/media/2018/06/27/USATODAY/USATODAY/636656795351745338-XXX-SW-Trevor-Noah-97146529.JPG?width=680&height=360&fit=crop" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Trevor Noah</h5>
