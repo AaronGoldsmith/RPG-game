@@ -8,12 +8,30 @@ body,html{
 textarea.form-control{
     max-height: 4rem;
 }
-textarea{
+.userInfo input{
     font-size: 2rem !important;
     resize: "none" !important;
     padding: 0px;
+    color: #111;
     min-height: 4rem;
     margin:auto 0px;
+}
+@keyframes appear{
+    from{opacity: 0.3}
+    to{opacity: 1.0}
+}
+#playerSelect .card{
+    opacity:1;
+}
+#playerSelect .card.activate{
+    opacity: 0.3;
+}
+#playerSelect .card.activate:hover{
+    cursor: pointer;
+    animation-name: appear;
+    animation-direction:alternate;
+    animation-duration: 0.4s;
+    opacity:1;
 }
 .shadowed{
     text-shadow: 1px 0px 2px black
@@ -22,8 +40,12 @@ a:focus,a:visited{
     color: initial;
     text-decoration:none;
 }
-#start{
-    color: #ff9945
+div#start{
+    color: #cacacafd;
+}
+div#start:hover{
+    color: #ff9945;
+    cursor: pointer;
 }
 a:hover,#hideme span:hover{
     text-decoration:underline;

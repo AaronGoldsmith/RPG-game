@@ -6,14 +6,41 @@ let weaponList = [
 var skillLabel =  $("#showSkills")
 var skills = $("#skillChart")
 var insBtn = $("#instructional");
-
 var GAMESTARTED = false;
-let playerObj = {
+var playerObj = {
     stats: {
           health: 0,
           strength: 0,
           logic: 0,
           agility: 0,
+        },
+    items: []
+    
+};
+let enemy0 = {
+    stats: {
+          health: 1,
+          strength: 1,
+          logic: 0,
+          agility: 0,
+        },
+    items: ["map"] 
+};
+let enemy1 = {
+    stats: {
+          health: 10,
+          strength: 1,
+          logic: 0,
+          agility: 0,
+        },
+    items: [] 
+};
+let enemy2 = {
+    stats: {
+          health: 10,
+          strength: 2,
+          logic: 0,
+          agility: 1,
         },
     items: []
     
@@ -45,6 +72,8 @@ function updateDisplayedStats(){
 
 $(document).ready(function(){
     updateDisplayedStats()
+    $("#namer").focus()
+
     skillLabel.on("click",function(){
         updateDisplayedStats()
             skills.fadeIn("fast",function(){
@@ -52,21 +81,39 @@ $(document).ready(function(){
             skillLabel.addClass("invisible")
         });
     })
+
+    $(".card-img-top").on("click",function(){
+        $(".card-img-top").parent().addClass("invisible");
+        $(this).parent().removeClass("invisible");
+        $(this).removeClass("activate")
+        $(".gameContent").remove();
+        $(".card-body").remove();
+    });
+
     $("#hideme").on("click",function(){
         skills.fadeOut("fast",function(){
               skillLabel.removeClass("invisible");
               skills.addClass("invisible")
         });
     });
-    $("#start").on("click",function(){
-        // start game
-        if($)
-        $(this).toggle();
+
+    $("#playerSelect .card").on("mouseenter",function(){
+        $(this).addClass("border-primary")
+    }).on("mouseleave",function(){
+        $(this).removeClass("border-primary")
     });
-    insBtn.on("click",function(){
-        console.log("here")
-        $(this).toggle();
+
+    $("#start").on("click",function(event){
+        // start game if they have something in the input
+            GAMESTARTED = true;
+        
+            $(this).toggle();
+            $(".gameContent").removeClass("invisible");
+            $("#playerSelect").removeClass("invisible");
+            $("#charnamer").toggle();
+            skillLabel.removeClass("invisible");
     });
+ 
     // clicking on a skill
     $(".itemFrame").on("click",function(event){
         updateDisplayedStats()
@@ -95,11 +142,6 @@ $(document).ready(function(){
         updateDisplayedStats()
     });
 
-    $("#start").on("click",function(){
-        $(this).toggle
-        GAMESTARTED = true;
-        skillLabel.removeClass("invisible");
-    });
 
 });
 
