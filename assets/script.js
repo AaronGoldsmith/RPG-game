@@ -86,8 +86,9 @@ $(document).ready(function(){
         $(".card-img-top").parent().addClass("invisible");
         $(this).parent().removeClass("invisible");
         $(this).removeClass("activate")
-        $(".gameContent").remove();
-        $(".card-body").remove();
+        // $(".layer-2").remove()
+    //     $(".gameContent").remove();
+    //     $(".card-body").remove();
     });
 
     $("#hideme").on("click",function(){
@@ -108,9 +109,9 @@ $(document).ready(function(){
             GAMESTARTED = true;
         
             $(this).toggle();
-            $(".gameContent").removeClass("invisible");
-            $("#playerSelect").removeClass("invisible");
-            $("#charnamer").toggle();
+            $(".layer-1").remove();
+            $(".layer-2").removeClass("invisible");
+
             skillLabel.removeClass("invisible");
     });
  
@@ -143,7 +144,7 @@ $(document).ready(function(){
     });
 
 
-});
+    });
 
 
      
