@@ -8,6 +8,9 @@ body,html{
 textarea.form-control{
     max-height: 4rem;
 }
+#enemySelect{
+    margin: 0 auto;
+}
 .card-body h5{display:inline-flex;}
 .userInfo input{
     font-size: 2rem !important;

@@ -2,7 +2,10 @@ let weaponList = [
     {"sword":4,"lifespan":100},
     {"axe":3,"lifespan":200},
     {"pistol":8,"lifespan":10},
-    {"magic": 7,"lifespan":20}];
+    {"magic": 7,"lifespan":20},
+    {"humor": 1,"lifespan":99}
+
+];
 var skillLabel =  $("#showSkills")
 var skills = $("#skillChart")
 var insBtn = $("#instructional");
@@ -15,9 +18,8 @@ var playerObj = {
           agility: 0,
         },
     items: []
-    
 };
-let enemy0 = {
+let enemy = {
     stats: {
           health: 1,
           strength: 1,
@@ -33,16 +35,16 @@ let enemy1 = {
           logic: 0,
           agility: 0,
         },
-    items: [] 
+    items: ["rope"] 
 };
 let enemy2 = {
     stats: {
           health: 10,
           strength: 2,
-          logic: 0,
+          logic: 1,
           agility: 1,
         },
-    items: []
+    items: ["GPS"]
     
 };
 function random(arr){
@@ -84,11 +86,13 @@ $(document).ready(function(){
     $(".card-img-top").on("click",function(){
         $(".card-img-top").parent().addClass("invisible");
         $(this).parent().removeClass("invisible");
-        $(this).removeClass("activate")
+        // if(!$(this).hasClass("activate"))
+        // {
+        //     $(".card-body").append("<br><button>ATTACK</button><br><button>RUN</button>");
+        // }
         $("#comedianTxt").remove();
         $(".card-text").toggle();
-        $(".card-body").append("<button>ATTACK</button><br><button>RUN</button>");
-
+        $("#enemySelect").removeClass("invisible")
         skillLabel.removeClass("invisible");
 
     });
@@ -137,8 +141,10 @@ $(document).ready(function(){
         }
         else{
             var textVal = $(this).find(".itemVal");
-            $(this).removeClass("align-self-end"); // reposition item     
-            textVal.remove(); // remove text so element can shift appropriately
+            // reposition item 
+            // remove text so element can shift appropriately
+            $(this).removeClass("align-self-end");     
+            textVal.remove(); 
             icon.addClass("activate");
         }
         updateDisplayedStats()
