@@ -17,7 +17,7 @@ var playerObj = {
           logic: 0,
           agility: 0,
         },
-    items: []
+    items: [],
 };
 let enemy = {
     stats: {
@@ -85,16 +85,13 @@ $(document).ready(function(){
 
     $(".card-img-top").on("click",function(){
         $(".card-img-top").parent().addClass("invisible");
-        $(this).parent().removeClass("invisible");
-        // if(!$(this).hasClass("activate"))
-        // {
-        //     $(".card-body").append("<br><button>ATTACK</button><br><button>RUN</button>");
-        // }
+        $(this).parent().removeClass("invisible"); // only show the current card
+        $(this).parent().find("#playerActions").removeClass("invisible");
+        $("#playerActions").addClass("visible")
         $("#comedianTxt").remove()
+        $("#enemySelect").removeClass("invisible")
 
         $(".card-text").toggle();
-        $("#enemySelect").removeClass("invisible")
-        // $("#enemyselection").remove();
         skillLabel.removeClass("invisible");
 
     });
